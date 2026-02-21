@@ -10,6 +10,11 @@
 	    //"sshd": "latest"
 	},
 
+	"mounts": [
+        // Format: source=LOCAL_PATH,target=CONTAINER_PATH,type=bind
+        "source=/home/simon/.gramophile,target=/home/vscode/.gramophile,type=bind"
+    ],
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
