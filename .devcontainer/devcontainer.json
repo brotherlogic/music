@@ -6,6 +6,7 @@
 	"image": "mcr.microsoft.com/devcontainers/base:noble",
 	"features": {
 		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
 		//"sshd": "latest"
 		"ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {},
