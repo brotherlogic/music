@@ -10,3 +10,5 @@ go install github.com/brotherlogic/gramophile/gram@latest
 go install github.com/brotherlogic/recordcollection/recordcollection_cli@latest
 go install github.com/brotherlogic/cdprocessor/cdprocessor_cli@latest
 
+# Install Ghostty terminfo for correct terminal support via SSH
+curl -s https://raw.githubusercontent.com/ghostty-org/ghostty/main/src/vt/terminfo/ghostty.info | tic -x -
