@@ -9,3 +9,4 @@ go install github.com/brotherlogic/recordfanout/recordfanout_cli@latest
 go install github.com/brotherlogic/gramophile/gram@latest
 go install github.com/brotherlogic/recordcollection/recordcollection_cli@latest
 go install github.com/brotherlogic/cdprocessor/cdprocessor_cli@latest
+
