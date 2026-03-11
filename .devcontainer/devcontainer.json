@@ -13,21 +13,27 @@
 	},
 	"mounts": [
 		// Format: source=LOCAL_PATH,target=CONTAINER_PATH,type=bind
-		"source=/home/simon/.gramophile,target=/home/vscode/.gramophile,type=bind"
+		"source=/home/simon/.gramophile,target=/home/vscode/.gramophile,type=bind",
+		"source=/home/simon/.config/gh/hosts.yml,target=/home/vscode/.config/gh/hosts.yml,type=bind",
 	],
 	"runArgs": [
 		"--security-opt",
-		"label=disable"
+		"label=disable",
 	],
+	"remoteOTEL.enabled": true,
+	"forwardPorts": [],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-	"postCreateCommand": "./postCreate.sh"
+	"postCreateCommand": "./postCreate.sh",
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"containerEnv": {
+		"GH_GIT_PROTOCOL": "ssh"
+	}
 }
