@@ -16,6 +16,6 @@ tic -x ghostty.terminfo
 
 
 
-# Install tmux
-sudo apt-get update && sudo apt-get install -y tmux
+# Install tmux and emacs
+sudo apt-get update && sudo apt-get install -y tmux emacs
 
