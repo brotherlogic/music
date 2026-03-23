@@ -33,6 +33,7 @@
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
+	// This runs tmux on startup
 	"postCreateCommand": "./postCreate.sh",
 	// Configure tool-specific properties.
 	// "customizations": {},
