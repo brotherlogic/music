@@ -19,3 +19,7 @@ tic -x ghostty.terminfo
 # Install tmux and emacs
 sudo apt-get update && sudo apt-get install -y tmux emacs
 
+# Configure tmux to start on login with two vertical panes
+echo 'if [ -z "$TMUX" ]; then' >> ~/.zshrc
+echo '    tmux attach || tmux new-session \; split-window -h \; select-pane -t 0' >> ~/.zshrc
+echo 'fi' >> ~/.zshrc
