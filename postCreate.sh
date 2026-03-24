@@ -14,8 +14,6 @@ go install github.com/brotherlogic/queue/queue_cli@latest
 # Account for Ghostty
 tic -x ghostty.terminfo
 
-
-
 # Install tmux and emacs
 sudo apt-get update && sudo apt-get install -y tmux emacs
 
