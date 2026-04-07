@@ -39,5 +39,6 @@
 	// "remoteUser": "root"
 	"containerEnv": {
 		"GH_GIT_PROTOCOL": "ssh"
-	}
+	},
+	"workspaceFolder": "/workspaces/music"
 }

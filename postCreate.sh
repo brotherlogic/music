@@ -10,6 +10,7 @@ go install github.com/brotherlogic/gramophile/gram@latest
 go install github.com/brotherlogic/recordcollection/recordcollection_cli@latest
 go install github.com/brotherlogic/cdprocessor/cdprocessor_cli@latest
 go install github.com/brotherlogic/queue/queue_cli@latest
+go install github.com/brotherlogic/recordsorganiser/recordsorganiser_cli@latest
 
 # Account for Ghostty
 tic -x ghostty.terminfo
