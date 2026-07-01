@@ -21,6 +21,12 @@ sudo apt-get update && sudo apt-get install -y tmux emacs
 # Install gh dash
 gh extension install dlvhdr/gh-dash
 
+
+# Install Antigravity CLI
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+git config --global user.email 'brotherlogic.automation@gmail.com'
+git config --global user.name 'Brotherlogic Automation'
+
 TMUX_BLOCK=$(cat << 'EOF'
 if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
   cd /workspaces/music
