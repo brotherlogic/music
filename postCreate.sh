@@ -21,7 +21,16 @@ sudo apt-get update && sudo apt-get install -y tmux emacs
 # Install gh dash
 gh extension install dlvhdr/gh-dash
 
-# Configure tmux to start on login with two vertical panes
-echo 'if [ -z "$TMUX" ]; then' >> ~/.zshrc
-echo '    tmux attach || tmux new-session \; split-window -h \; select-pane -t 0' >> ~/.zshrc
-echo 'fi' >> ~/.zshrc
+TMUX_BLOCK=$(cat << 'EOF'
+if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
+  cd /workspaces/music
+  /workspaces/music/start-tmux.sh && tmux attach-session -t music
+fi
+EOF
+)
+
+grep -q "tmux attach-session" ~/.zshrc || echo "$TMUX_BLOCK" >> ~/.zshrc
+grep -q "tmux attach-session" ~/.bashrc || echo "$TMUX_BLOCK" >> ~/.bashrc
+
+# Ensure the session is created
+/workspaces/music/start-tmux.sh

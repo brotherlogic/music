@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
+	"name": "Music",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:noble",
 	"features": {
@@ -9,14 +9,17 @@
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
 		//"sshd": "latest"
-		"ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {},
+		"ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {}
 	},
 	"mounts": [
 		// Format: source=LOCAL_PATH,target=CONTAINER_PATH,type=bind
 		"source=/home/simon/.gramophile,target=/home/vscode/.gramophile,type=bind",
-		"source=/home/simon/.ssh,target=/home/vscode/.ssh,type=bind"
+	    "source=/home/simon/.ssh,target=/home/vscode/.ssh,type=bind",
+	    		"source=/var/run/dbus,target=/var/run/dbus,type=bind",
+	    "source=/run/user,target=/run/user,type=bind",
+	    	    "source=${localEnv:HOME}/.gemini,target=/home/vscode/.gemini,type=bind"
 	],
-	"initializeCommand": "echo \"GH_TOKEN=$(gh auth token)\" > .devcontainer/.env.auth",
+"initializeCommand": "cat ~/.seraphine-automation > .devcontainer/.env.auth",
 	"runArgs": [
 		"--security-opt",
 		"label=disable",
@@ -38,7 +41,11 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 	"containerEnv": {
-		"GH_GIT_PROTOCOL": "ssh"
+	    "GH_GIT_PROTOCOL": "ssh",
+	    	"DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+		"LANG": "en_US.UTF-8",
+		"LC_ALL": "en_US.UTF-8",
+		"TZ": "America/Los_Angeles"
 	},
 	"workspaceFolder": "/workspaces/music"
 }
